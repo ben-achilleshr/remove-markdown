@@ -76,7 +76,7 @@ module.exports = function (md, options) {
       .replace(/\!\[(.*?)\][\[\(].*?[\]\)]/g, options.useImgAltText ? "$1" : "")
       // Remove inline links
       .replace(
-        /\[([\s\S]*?)\]\s*[\(\[].*?[\)\]]/g,
+        /\[([\s\S]*?)\]\s*[\(\[]\s*(.*?)\s*[\)\]]/g,
         options.replaceLinksWithURL ? "$1 ($2)" : "$1"
       )
       // Remove blockquotes
